@@ -10,6 +10,7 @@ import {AppComponent} from './app.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {AuthModule} from './auth/auth.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgbModule.forRoot(),
 
     CoreModule.forRoot(),
     AuthModule.forRoot(),

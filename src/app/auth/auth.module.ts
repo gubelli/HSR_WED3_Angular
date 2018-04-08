@@ -8,6 +8,7 @@ import {AuthResourceService, TokenInterceptor} from './resources';
 import {LoginComponent, LogoutComponent,
   RegisterComponent} from './components';
 import {SharedModule} from '../shared/shared.module';
+import {CommonModule} from '@angular/common';
 
 const EXPORTED_DECLARATIONS = [
   LoginComponent, LogoutComponent, RegisterComponent
@@ -25,7 +26,8 @@ const EXPORTS = [
   declarations: INTERNAL_DECLARATIONS,
   imports: [
     FormsModule,
-    SharedModule
+    SharedModule,
+    CommonModule
   ],
   exports: EXPORTS,
   providers: [ AuthResourceService ]
