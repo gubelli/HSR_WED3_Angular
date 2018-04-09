@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {RegisterComponent} from './auth/components';
 
 const appRoutes: Routes = [
   // TODO: Add routing of lazy loaded dashboard Module (with guards) here...

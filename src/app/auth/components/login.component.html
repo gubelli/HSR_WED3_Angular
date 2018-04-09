@@ -1,29 +1,23 @@
 <!-- TODO: Add ng specific directives/validation settings and add styling -->
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h1 class="card-title">Welcome to the finance portal</h1>
-          <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)" class="needs-validation" novalidate>
-            <div class="form-group">
-              <label for="login">User name</label>
-              <input type="text" pattern=".{3,}" class="form-control" aria-describedby="loginHelpBlock" id="login" name="login" ngModel #login="ngModel" required>
-              <small id="loginHelpBlock" class="form-text text-muted" *ngIf="!login.valid">
-                Please specify your login, at least three characters.
-              </small>
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" pattern=".{3,}" class="form-control" aria-describedby="passwordHelpBlock" id="password" name="password" ngModel #password="ngModel" required>
-              <small id="passwordHelpBlock" class="form-text text-muted" *ngIf="!password.valid">
-                Please specify your login, at least three characters.
-              </small>
-            </div>
-            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
-          </form>
-        </div>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">Welcome to the finance portal</h1>
+    <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="login">User name</label>
+        <input type="text" pattern=".{3,}" class="form-control" aria-describedby="loginHelpBlock" id="login" name="login" ngModel #login="ngModel" required>
+        <small id="loginHelpBlock" class="form-text text-muted" *ngIf="!login.valid">
+          Please specify your login, at least three characters.
+        </small>
       </div>
-    </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" pattern=".{3,}" class="form-control" aria-describedby="passwordHelpBlock" id="password" name="password" ngModel #password="ngModel" required>
+        <small id="passwordHelpBlock" class="form-text text-muted" *ngIf="!password.valid">
+          Please specify your password, at least three characters.
+        </small>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+    </form>
   </div>
 </div>
