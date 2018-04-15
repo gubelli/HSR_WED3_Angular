@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <h2>New payment</h2>
+  </div>
+  <div class="card-body">
+    <form #paymentForm="ngForm" (ngSubmit)="doPayment(paymentForm)" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="from">From</label>
+        <input type="text" class="form-control" id="from" name="from" ngModel #from="ngModel" placeholder="From" value="{{accountInfo.accountNr}} [{{accountInfo.amount | number:'.2-2' }} CHF]" readonly>
+      </div>
+      <div class="form-group">
+        <label for="to">To</label>
+        <input type="text" class="form-control" aria-describedby="toHelpBlock" id="to" name="to" ngModel #to="ngModel" placeholder="Target account number" required>
+        <small id="toHelpBlock" class="form-text text-muted" *ngIf="!to.valid">
+          Please specify the target account number.
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount [CHF]</label>
+        <input type="number" class="form-control" aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" placeholder="Ammount in CHF" required>
+        <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
+          Please specify the amount.
+        </small>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid">Pay</button>
+    </form>
+  </div>
+</div>
