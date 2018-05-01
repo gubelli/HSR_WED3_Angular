@@ -13,8 +13,21 @@ export class AccountService extends ResourceBase {
     super(http);
   }
 
-  public getAccountInfo(): Observable<AccountInfo> {
+  public getOwnAccountInfo(): Observable<AccountInfo> {
     return this.get('/accounts/')
+      .pipe(
+        map((result: any) => {
+          if (result) {
+            return AccountInfo.fromDto(result);
+          }
+          return null;
+        }),
+        catchError((error: any) => of<AccountInfo>(null))
+      );
+  }
+
+  public getAccountInfo(accountId: number): Observable<AccountInfo> {
+    return this.get('/accounts/' + accountId)
       .pipe(
         map((result: any) => {
           if (result) {

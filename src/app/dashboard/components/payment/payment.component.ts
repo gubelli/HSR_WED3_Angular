@@ -14,7 +14,7 @@ export class PaymentComponent implements OnInit {
   constructor(private accountService: AccountService) { }
 
   ngOnInit() {
-    this.accountService.getAccountInfo().subscribe(data => {
+    this.accountService.getOwnAccountInfo().subscribe(data => {
       this.accountInfo = data;
       console.log(this.accountInfo);
     });

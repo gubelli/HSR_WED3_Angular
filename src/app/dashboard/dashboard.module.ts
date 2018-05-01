@@ -6,6 +6,7 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {AccountService} from './services/account.service';
+import {TargetAccountValidationDirective} from './directives/target-account-validation.directive';
 
 const EXPORTED_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used outside the Module
@@ -14,7 +15,8 @@ const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS,
   // Declarations (Components / Directives) which can be used inside the Module
   PaymentComponent,
-  DashboardComponent
+  DashboardComponent,
+  TargetAccountValidationDirective
 ];
 const EXPORTS = [
   ...EXPORTED_DECLARATIONS
