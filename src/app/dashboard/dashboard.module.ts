@@ -5,6 +5,7 @@ import {PaymentComponent} from './components';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {AccountService} from './services/account.service';
 
 const EXPORTED_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used outside the Module
@@ -31,6 +32,7 @@ const EXPORTS = [
     // DI Providers (hierarchical)
     // (Services, Tokens, Factories, ...) used from/within this Module; add either here or in forRoot();
     //  * Registers these Classes for the current Module; importing Modules will create new instances (for importing level and below)
+    AccountService
   ]
 })
 export class DashboardModule {
