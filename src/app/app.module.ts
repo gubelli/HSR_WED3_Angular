@@ -11,6 +11,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {LayoutModule} from './layout/layout.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CoreModule.forRoot(),
     AuthModule.forRoot(),
     WelcomeModule.forRoot(),
+    LayoutModule.forRoot(),
 
     AppRoutingModule
   ],

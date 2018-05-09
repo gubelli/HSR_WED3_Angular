@@ -1,35 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <nav class="navbar navbar-dark bg-dark justify-content-between">
-        <a class="navbar-brand" href="#">WED 3</a>
-        <a class="btn btn-primary nav-link active" routerLink="/welcome/register">Register</a>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h1 class="card-title">All transactions</h1>
-          <form>
-            <div class="form-row">
-              <div class="col">
-                <label for="selectYear">Select a year</label>
-                <select id="selectYear" name="selectYear">
-                  <option *ngFor="let year of years" [selected]="year == actualDate.getFullYear()">{{year}}</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="selectMonth">Select a month</label>
-                <select id="selectMonth" name="selectMonth">
-                  <option *ngFor="let month of months" [selected]="months.indexOf(month) == actualDate.getMonth()">{{month}}</option>
-                </select>
-              </div>
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">All transactions</h1>
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <label for="selectYear">Select a year</label>
+              <select id="selectYear" name="selectYear">
+                <option *ngFor="let year of years" [selected]="year == actualDate.getFullYear()">{{year}}</option>
+              </select>
             </div>
-          </form>
-          <wed-transaction-table [fromDate]="fromDate" [toDate]="toDate"></wed-transaction-table>
-        </div>
+            <div class="col">
+              <label for="selectMonth">Select a month</label>
+              <select id="selectMonth" name="selectMonth">
+                <option *ngFor="let month of months" [selected]="months.indexOf(month) == actualDate.getMonth()">{{month}}</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <wed-transaction-table [fromDate]="fromDate" [toDate]="toDate"></wed-transaction-table>
       </div>
     </div>
   </div>
