@@ -1,8 +1,10 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {TableComponent} from './table/table.component';
+import {CommonModule} from '@angular/common';
 
 const EXPORTED_DECLARATIONS = [
-  // TODO: Add declarations here, if additional components/directives/... should be exported
+  TableComponent
 ];
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS
@@ -16,6 +18,7 @@ const EXPORTS = [
 @NgModule({
   declarations: INTERNAL_DECLARATIONS,
   imports: [
+    CommonModule,
     FormsModule
   ],
   exports: EXPORTS,

@@ -1,4 +1,4 @@
-import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 
 import {Observable} from 'rxjs/Observable';
 
@@ -17,6 +17,10 @@ export abstract class ResourceBase {
 
   protected get(path: string): Observable<any> {
     return this.http.get(environment.serverBaseUrl + path);
+  }
+
+  protected getWithQuery(path: string, params: HttpParams): Observable<any> {
+    return this.http.get(environment.serverBaseUrl + path, {params: params});
   }
 
   protected post(path: string, dto: any): Observable<any> {

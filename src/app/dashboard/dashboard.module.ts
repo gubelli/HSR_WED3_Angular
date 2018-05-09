@@ -7,6 +7,10 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {AccountService} from './services/account.service';
 import {TargetAccountValidationDirective} from './directives/target-account-validation.directive';
+import {TransactionService} from './services/transaction.service';
+import {TransactionTableComponent} from './components/transaction-table/transaction-table.component';
+import {LatestTransactionsComponent} from './components/latest-transactions/latest-transactions.component';
+import {AllTransactionsComponent} from './components/all-transactions/all-transactions.component';
 
 const EXPORTED_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used outside the Module
@@ -16,7 +20,10 @@ const INTERNAL_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used inside the Module
   PaymentComponent,
   DashboardComponent,
-  TargetAccountValidationDirective
+  TargetAccountValidationDirective,
+  TransactionTableComponent,
+  LatestTransactionsComponent,
+  AllTransactionsComponent
 ];
 const EXPORTS = [
   ...EXPORTED_DECLARATIONS
@@ -34,7 +41,7 @@ const EXPORTS = [
     // DI Providers (hierarchical)
     // (Services, Tokens, Factories, ...) used from/within this Module; add either here or in forRoot();
     //  * Registers these Classes for the current Module; importing Modules will create new instances (for importing level and below)
-    AccountService
+    AccountService, TransactionService
   ]
 })
 export class DashboardModule {

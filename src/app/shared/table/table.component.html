@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let col of tableSettings">{{col.title}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of data">
+    <td *ngFor="let col of tableSettings">
+        <ng-container [ngTemplateOutlet]="col.formatAsNumber ? withFormat : plainFormat"
+                      [ngTemplateOutletContext]="{row: row, col: col}"></ng-container>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #withFormat let-row="row" let-col="col">
+  {{row[col.column] | number:'.2'}}
+</ng-template>
+<ng-template #plainFormat let-row="row" let-col="col">
+  {{row[col.column]}}
+</ng-template>

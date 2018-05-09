@@ -2,17 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {PaymentComponent} from './components';
+import {AllTransactionsComponent} from './components/all-transactions/all-transactions.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
-    children: [
-      {
-        path: '',
-        component: PaymentComponent
-      }
-    ]
+    component: DashboardComponent
+  },
+  {
+    path: 'transactions',
+    component: AllTransactionsComponent
   }
 ];
 

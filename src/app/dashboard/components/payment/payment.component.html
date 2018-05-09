@@ -1,7 +1,8 @@
 <div class="card">
   <div class="card-body">
     <h1 class="card-title">New Payment</h1>
-    <form #paymentForm="ngForm" (ngSubmit)="doPayment(paymentForm)" class="needs-validation" novalidate>
+    <form #paymentForm="ngForm" (ngSubmit)="doTransaction()" class="needs-validation"
+          novalidate *ngIf="!isSubmitted; else transactionOverview">
       <div class="form-group">
         <label for="from">From</label>
         <input type="text" name="from" class="form-control" id="from" ngModel #from="ngModel"
@@ -10,19 +11,32 @@
       <div class="form-group">
         <label for="to">To</label>
         <input type="number" class="form-control" aria-describedby="toHelpBlock" id="to"
-               name="to" ngModel #to="ngModel" required wedTargetAccountValidation="{{accountInfo?.accountNr}}">
-        <small id="toHelpBlock" class="form-text text-muted" *ngIf="!to.valid">
-          Please specify the target account number. {{to.errors | json}}
+               name="to" ngModel #to="ngModel" required pattern="\d{7}" (keyup)="validTargetAccount(to)">
+        <small id="toHelpBlock" class="form-text text-muted" *ngIf="!to.valid || targetAccountError?.invalid">
+          Please specify the target account number.
         </small>
+        <ng-container *ngIf="to.valid">
+          <small class="form-text text-muted" *ngIf="targetAccount && !targetAccountError">
+            {{targetAccount.owner.firstname}} {{targetAccount.owner.lastname}}
+          </small>
+          <small class="form-text text-muted" *ngIf="targetAccountError?.unknown">
+            Unknown account number specified.
+          </small>
+        </ng-container>
       </div>
       <div class="form-group">
-      <label for="amount">Amount [CHF]</label>
-      <input type="number" class="form-control" aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
-      <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
-        Please specify the amount.
-      </small>
-    </div>
-      <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid">Pay</button>
+        <label for="amount">Amount [CHF]</label>
+        <input type="number" class="form-control" aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
+        <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
+          Please specify the amount.
+        </small>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid || targetAccountError">Pay</button>
     </form>
+    <ng-template #transactionOverview>
+      <p>Transaction to {{transaction.target}} succeeded</p>
+      <p>New balance CHF {{transaction.total | number:'.2'}}</p>
+      <button class="btn btn-primary" (click)="startOver()">Start over</button>
+    </ng-template>
   </div>
 </div>

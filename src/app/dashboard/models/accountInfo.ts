@@ -1,6 +1,8 @@
+import {Account} from '../../auth/models';
+
 export class AccountInfo {
   constructor(public ownerId: string,
-              public accountNr: number,
+              public accountNr: string,
               public amount: number,
               public owner: Account) {
   }
