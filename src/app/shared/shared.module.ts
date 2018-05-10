@@ -12,7 +12,6 @@ const INTERNAL_DECLARATIONS = [
 ];
 const EXPORTS = [
   ...EXPORTED_DECLARATIONS
-  // TODO: Add exports here, if additional modules should be exported
 ];
 
 @NgModule({

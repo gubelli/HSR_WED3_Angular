@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 import {Transaction} from '../../models';
 import {TransactionService} from '../../services';
 import {TableSettings} from '../../../shared';
-import {DataService} from '../../../core/services/data.service';
+import {DataService} from '../../../core/services';
 
 @Component({
   selector: 'wed-transaction-table',

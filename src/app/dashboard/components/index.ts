@@ -1,4 +1,3 @@
-// TODO: Add barrel exports of your features (export * from '...';) here...
 export * from './payment/payment.component';
 export * from './all-transactions/all-transactions.component';
 export * from './dashboard/dashboard.component';

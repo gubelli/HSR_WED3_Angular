@@ -26,10 +26,10 @@
       </div>
       <div class="form-group">
         <label for="amount">Amount [CHF]</label>
-        <input type="number" class="form-control" [min]="0"
+        <input type="number" class="form-control" [min]="0.05" [max]="accountInfo?.amount"
                aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
         <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
-          Please specify the amount.
+          Please specify the amount. Between 0.05 and {{accountInfo?.amount}} !
         </small>
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid || targetAccountError">Pay</button>

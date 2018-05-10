@@ -1,16 +1,13 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import {SharedModule} from '../shared/shared.module';
 import {DashboardRoutingModule} from './dashboard-routing.module';
-import {PaymentComponent} from './components';
-import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {PaymentComponent, DashboardComponent, TransactionTableComponent,
+  LatestTransactionsComponent, AllTransactionsComponent} from './components';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {AccountService} from './services/account.service';
+import {AccountService, TransactionService} from './services';
 import {TargetAccountValidationDirective} from './directives/target-account-validation.directive';
-import {TransactionService} from './services/transaction.service';
-import {TransactionTableComponent} from './components/transaction-table/transaction-table.component';
-import {LatestTransactionsComponent} from './components/latest-transactions/latest-transactions.component';
-import {AllTransactionsComponent} from './components/all-transactions/all-transactions.component';
+import {CustomFormsModule} from 'ng2-validation';
 
 const EXPORTED_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used outside the Module
@@ -34,7 +31,7 @@ const EXPORTS = [
   declarations: INTERNAL_DECLARATIONS,
   imports: [
     // Other Modules to import (imports the exported Components/Directives from the other module)
-    CommonModule, SharedModule, DashboardRoutingModule, FormsModule
+    CommonModule, SharedModule, DashboardRoutingModule, FormsModule, CustomFormsModule
   ],
   exports: EXPORTS,
   providers: [

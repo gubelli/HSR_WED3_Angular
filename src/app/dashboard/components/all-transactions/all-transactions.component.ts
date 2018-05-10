@@ -11,7 +11,7 @@ export class AllTransactionsComponent implements OnInit {
   fromDate = new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), 1);
   toDate = new Date(this.actualDate.getFullYear(), this.actualDate.getMonth() + 1, 0);
   months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  years = [2015, 2016, 2017, 2018];
+  years: number[] = [];
 
   selectedMonth: number = this.actualDate.getMonth();
   selectedYear: number = this.actualDate.getFullYear();
@@ -19,6 +19,9 @@ export class AllTransactionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    for (let _i = this.actualDate.getFullYear(); _i > this.actualDate.getFullYear() - 3; _i--) {
+      this.years.push(_i);
+    }
   }
 
   public generateDateSpan(): void {

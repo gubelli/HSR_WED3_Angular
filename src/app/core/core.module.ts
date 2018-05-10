@@ -1,9 +1,6 @@
 import {NgModule, ModuleWithProviders, SkipSelf, Optional} from '@angular/core';
-
 import {SharedModule} from '../shared/shared.module';
-
-import {NavigationService} from './services';
-import {DataService} from './services/data.service';
+import {NavigationService, DataService} from './services';
 import {RouteGuard} from './utils';
 
 @NgModule({

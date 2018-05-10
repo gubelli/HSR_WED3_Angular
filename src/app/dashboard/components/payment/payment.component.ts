@@ -1,10 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm, NgModel} from '@angular/forms';
-import {AccountService} from '../../services';
-import {AccountInfo} from '../../models';
-import {Transaction} from '../../models';
-import {TransactionService} from '../../services';
-import {DataService} from '../../../core/services/data.service';
+import {AccountService, TransactionService} from '../../services';
+import {AccountInfo, Transaction} from '../../models';
+import {DataService} from '../../../core/services';
 
 @Component({
   selector: 'wed-payment',
