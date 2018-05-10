@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm, NgModel} from '@angular/forms';
-import {AccountService} from '../../services/account.service';
-import {AccountInfo} from '../../models/accountInfo';
-import {Transaction} from '../../models/transaction';
-import {TransactionService} from '../../services/transaction.service';
+import {AccountService} from '../../services';
+import {AccountInfo} from '../../models';
+import {Transaction} from '../../models';
+import {TransactionService} from '../../services';
 import {DataService} from '../../../core/services/data.service';
 
 @Component({

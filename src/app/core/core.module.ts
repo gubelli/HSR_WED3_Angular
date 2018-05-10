@@ -1,9 +1,10 @@
-import {NgModule, ModuleWithProviders, SkipSelf, Optional, forwardRef} from '@angular/core';
+import {NgModule, ModuleWithProviders, SkipSelf, Optional} from '@angular/core';
 
 import {SharedModule} from '../shared/shared.module';
 
 import {NavigationService} from './services';
 import {DataService} from './services/data.service';
+import {RouteGuard} from './utils';
 
 @NgModule({
   declarations: [ ],
@@ -18,7 +19,7 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         // DI Providers (Services, Tokens, Factories...) to be used globally and instantiated only once
-        NavigationService, DataService
+        NavigationService, DataService, RouteGuard
       ]
     };
   }

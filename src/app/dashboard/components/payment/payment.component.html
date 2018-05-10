@@ -1,6 +1,6 @@
 <div class="card">
+  <div class="card-header"><h1>New payment</h1></div>
   <div class="card-body">
-    <h1 class="card-title">New Payment</h1>
     <form #paymentForm="ngForm" (ngSubmit)="doTransaction()" class="needs-validation"
           novalidate *ngIf="!isSubmitted; else transactionOverview">
       <div class="form-group">
@@ -26,7 +26,8 @@
       </div>
       <div class="form-group">
         <label for="amount">Amount [CHF]</label>
-        <input type="number" class="form-control" aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
+        <input type="number" class="form-control" [min]="0"
+               aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
         <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
           Please specify the amount.
         </small>

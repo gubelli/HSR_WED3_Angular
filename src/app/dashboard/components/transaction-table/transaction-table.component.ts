@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Transaction} from '../../models/transaction';
-import {TransactionService} from '../../services/transaction.service';
-import {TableSettings} from '../../../shared/table/table.component';
+import {Transaction} from '../../models';
+import {TransactionService} from '../../services';
+import {TableSettings} from '../../../shared';
 import {DataService} from '../../../core/services/data.service';
 
 @Component({

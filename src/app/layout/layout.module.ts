@@ -2,6 +2,7 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {OneColumnLayoutComponent} from './one-column.layout';
 import {NavigationComponent} from './navigation/navigation.component';
 import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
 
 const EXPORTED_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used outside the Module
@@ -19,7 +20,7 @@ const EXPORTS = [
 
 @NgModule({
   declarations: INTERNAL_DECLARATIONS,
-  imports: [ CommonModule],
+  imports: [ CommonModule, RouterModule],
   exports: EXPORTS,
   providers: [ ]
 })

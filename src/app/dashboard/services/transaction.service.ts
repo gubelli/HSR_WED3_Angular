@@ -4,7 +4,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {of} from 'rxjs/observable/of';
 import {Observable} from 'rxjs/Observable';
 import {catchError, map} from 'rxjs/operators';
-import {Transaction} from '../models/transaction';
+import {Transaction} from '../models';
 
 @Injectable()
 export class TransactionService extends ResourceBase {

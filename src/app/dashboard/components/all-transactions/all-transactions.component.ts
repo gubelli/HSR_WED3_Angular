@@ -13,9 +13,16 @@ export class AllTransactionsComponent implements OnInit {
   months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   years = [2015, 2016, 2017, 2018];
 
+  selectedMonth: number = this.actualDate.getMonth();
+  selectedYear: number = this.actualDate.getFullYear();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  public generateDateSpan(): void {
+    this.fromDate = new Date(this.selectedYear, this.selectedMonth, 1);
+    this.toDate = new Date(this.selectedYear, this.selectedMonth + 1, 0);
+  }
 }

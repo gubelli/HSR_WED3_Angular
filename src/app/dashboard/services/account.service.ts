@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {ResourceBase} from '../../core/resources/resource-base';
+import {ResourceBase} from '../../core/resources';
 import {HttpClient} from '@angular/common/http';
 import {map, catchError} from 'rxjs/operators';
 import {of} from 'rxjs/observable/of';
-import {AccountInfo} from '../models/accountInfo';
+import {AccountInfo} from '../models';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
