@@ -15,7 +15,7 @@
 </table>
 
 <ng-template #withFormat let-row="row" let-col="col">
-  {{row[col.column] | number:'.2'}}
+  {{row[col.column] | number:'.2-2'}}
 </ng-template>
 <ng-template #plainFormat let-row="row" let-col="col">
   {{row[col.column]}}
