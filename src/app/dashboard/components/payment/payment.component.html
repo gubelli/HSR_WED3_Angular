@@ -30,7 +30,7 @@
                pattern="^\d*?(\.\d[0,5]?)?$"
                aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
         <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
-          Please specify the amount. Between 0.05 and {{accountInfo?.amount}} !
+          Please specify the amount between CHF 0.05 and CHF {{accountInfo?.amount | number: '.2'}} in CHF 0.05 steps !
         </small>
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid || targetAccountError">Pay</button>
