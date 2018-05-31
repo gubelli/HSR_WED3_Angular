@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../auth/services';
 import {Account} from '../../auth/models';
 import {NavigationService} from '../../core/services';
@@ -10,6 +10,7 @@ import {NavigationService} from '../../core/services';
 })
 export class NavigationComponent implements OnInit {
   isAuthenticated = false;
+  isCollapsed: true;
   user: Account;
 
   constructor(private authService: AuthService,

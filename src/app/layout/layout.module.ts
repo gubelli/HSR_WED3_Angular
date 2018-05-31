@@ -3,6 +3,7 @@ import {OneColumnLayoutComponent} from './one-column.layout';
 import {NavigationComponent} from './navigation/navigation.component';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 
 const EXPORTED_DECLARATIONS = [
   // Declarations (Components / Directives) which can be used outside the Module
@@ -20,7 +21,7 @@ const EXPORTS = [
 
 @NgModule({
   declarations: INTERNAL_DECLARATIONS,
-  imports: [ CommonModule, RouterModule],
+  imports: [ CommonModule, RouterModule, NgbCollapseModule],
   exports: EXPORTS,
   providers: [ ]
 })

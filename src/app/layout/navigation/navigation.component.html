@@ -1,35 +1,33 @@
-
-<ng-container *ngTemplateOutlet="isAuthenticated? authenticated : notAuthenticated"></ng-container>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <span class="navbar-brand">WED 3 Attestation</span>
+  <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbarDefault" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarDefault" [ngbCollapse]="isCollapsed">
+    <ng-container *ngTemplateOutlet="isAuthenticated? authenticated : notAuthenticated"></ng-container>
+  </div>
+</nav>
 
 <ng-template #notAuthenticated>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <p class="navbar-brand">WED 3 Attestation</p>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/welcome/" routerLinkActive="active">Home</a>
-        </li>
-      </ul>
-    </div>
-    <a class="btn btn-primary nav-link active" routerLink="/welcome/register" routerLinkActive="active">Register</a>
-  </nav>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/welcome/" routerLinkActive="active">Home</a>
+    </li>
+  </ul>
+  <a class="btn btn-primary nav-link active" routerLink="/welcome/register" routerLinkActive="active">Register</a>
 </ng-template>
 
 <ng-template #authenticated>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-    <p class="navbar-brand">WED 3 Attestation</p>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard/" routerLinkActive="active"
-             [routerLinkActiveOptions]="{exact: true}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard/transactions" routerLinkActive="active"
-             [routerLinkActiveOptions]="{exact: true}">Account transactions</a>
-        </li>
-      </ul>
-      <a class="btn btn-primary nav-link active" (click)="logout()">Logout {{user.firstname}} {{user.lastname}}</a>
-    </div>
-  </nav>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/" routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/transactions" routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}">Account transactions</a>
+    </li>
+  </ul>
+  <a class="btn btn-primary nav-link active" (click)="logout()">Logout {{user.firstname}} {{user.lastname}}</a>
 </ng-template>
