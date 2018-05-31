@@ -10,7 +10,7 @@
       </div>
       <div class="form-group">
         <label for="to">To</label>
-        <input type="number" class="form-control" aria-describedby="toHelpBlock" id="to"
+        <input type="number" class="form-control" aria-describedby="toHelpBlock" id="to" placeholder="Target Account Number"
                name="to" ngModel #to="ngModel" required pattern="\d{7}" (keyup)="validTargetAccount(to)">
         <small id="toHelpBlock" class="form-text text-muted" *ngIf="!to.valid || targetAccountError?.invalid">
           Please specify the target account number.
@@ -26,7 +26,7 @@
       </div>
       <div class="form-group">
         <label for="amount">Amount [CHF]</label>
-        <input type="number" class="form-control" [min]="0.05" [max]="accountInfo?.amount"
+        <input type="number" class="form-control" [min]="0.05" [max]="accountInfo?.amount" placeholder="Amount in CHF"
                aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
         <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
           Please specify the amount. Between 0.05 and {{accountInfo?.amount}} !

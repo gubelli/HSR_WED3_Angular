@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ResourceBase} from '../../core/resources';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {of} from 'rxjs/observable/of';
-import {Observable} from 'rxjs/Observable';
+import {of, Observable} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {Transaction} from '../models';
 

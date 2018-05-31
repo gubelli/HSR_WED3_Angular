@@ -1,6 +1,6 @@
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 import {environment} from '../../../environments/environment';
 

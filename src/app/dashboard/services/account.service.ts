@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import {ResourceBase} from '../../core/resources';
 import {HttpClient} from '@angular/common/http';
 import {map, catchError} from 'rxjs/operators';
-import {of} from 'rxjs/observable/of';
+import {of, Observable} from 'rxjs';
 import {AccountInfo} from '../models';
-import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AccountService extends ResourceBase {
