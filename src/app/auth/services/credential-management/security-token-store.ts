@@ -20,6 +20,10 @@ export class SecurityTokenStore {
     window.localStorage[SecurityTokenStore.TOKEN_KEY] = JSON.stringify(value);
     this.token = value;
   }
+
+  public clearStorage(): void {
+    window.localStorage.clear();
+  }
 }
 
 export interface SecurityToken {

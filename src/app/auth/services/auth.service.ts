@@ -47,6 +47,7 @@ export class AuthService {
   public logout(): void {
     this.tokenStore.storedValue = null;
     this.authUser = null;
+    this.tokenStore.clearStorage();
     this.authenticatedUserChange.emit(null);
   }
 }
