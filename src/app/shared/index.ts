@@ -1,1 +1,3 @@
-export * from './table/table.component';
+export * from './components';
+export * from './directives';
+

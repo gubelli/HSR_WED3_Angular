@@ -1,10 +1,12 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {TableComponent} from './table/table.component';
+import {TableComponent} from './components';
 import {CommonModule} from '@angular/common';
+import {ConfirmationDirective} from './directives';
 
 const EXPORTED_DECLARATIONS = [
-  TableComponent
+  TableComponent,
+  ConfirmationDirective
 ];
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS
