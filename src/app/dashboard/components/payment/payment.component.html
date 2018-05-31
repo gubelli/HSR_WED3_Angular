@@ -27,6 +27,7 @@
       <div class="form-group">
         <label for="amount">Amount [CHF]</label>
         <input type="number" class="form-control" [min]="0.05" [max]="accountInfo?.amount" placeholder="Amount in CHF"
+               pattern="^\d*?(\.\d[0,5]?)?$"
                aria-describedby="amountHelpBlock" id="amount" name="amount" ngModel #amount="ngModel" required>
         <small id="amountHelpBlock" class="form-text text-muted" *ngIf="!amount.valid">
           Please specify the amount. Between 0.05 and {{accountInfo?.amount}} !
